@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Centro Educacional Marinho de Mendonça - Cadastro</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ///////////////////////////////////////////////// INICIO MENU ////////////////////////////////////////////////////////// -->
+<div id="menu" class="container" style="margin-top: 15px;">
+   		 <a href="#" id ="abrecontalnk" class="btn btn-lg btn-success" onclick="aluno();" style="border:1px solid black;"><span class="material-icons">import_contacts</span>Aluno</a>
+
+        <a href="#" id="fechacontalnk" class="btn btn-lg btn-danger" onclick="professor();" style="border:1px solid black;"><span class="material-icons">psychology</span>Professor</a>
+
+        <a href="#" class="btn btn-lg btn-info" onclick="funcionario();" style="border:1px solid black;"><span class="material-icons">person_pin</span>Funcionario</a>
+
+        <a href="#" class="btn btn-lg btn-warning" onclick="turma();" style="border:1px solid black;"><span class="material-icons">house</span>Turma</a>
+
+        <a href="#" class="btn btn-lg btn-default" onclick="consulta();" style="border:1px solid black;"><span class="material-icons">assignment_turned_in</span>Consultas</a>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <a href="login.html" class="btn btn-lg btn-danger" onclick=""><span class="material-icons">exit_to_app</span> SAIR</a>
+</div>
+<!-- ///////////////////////////////////////////////// FINAL MENU ////////////////////////////////////////////////////////// -->
+
+
+<!-- ///////////////////////////////////////////////// INICIO ALUNO ////////////////////////////////////////////////////////// -->
+<div id="aluno" class="container">
+<form class="form-horizontal">
+<fieldset>
+<!-- Form Name -->
+<legend></legend>
+<br/>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selecionaTurma">Turma:</label>  
+  <div class="col-md-5">
+  <!--<input id="turmaAluno" name="turmaAluno" type="text" placeholder="" class="form-control input-md">-->
+  <select id="selecionaTurma" name="selecionaTurma" class="form-control">
+
+  </select>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nomeAluno">Nome:</label>  
+  <div class="col-md-5">
+  <input id="nomeAluno" name="nomeAluno" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="sobrenomeAluno">Sobrenome:</label>  
+  <div class="col-md-5">
+  <input id="sobrenomeAluno" name="sobrenomeAluno" type="text" placeholder="" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nomePai">Nome do Pai:</label>  
+  <div class="col-md-5">
+  <input id="nomePai" name="nomePai" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nomeMae">Nome da Mãe:</label>  
+  <div class="col-md-5">
+  <input id="nomeMae" name="nomeMae" type="text" placeholder="" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="dtNascimentoAluno">Data de Nascimento:</label>  
+  <div class="col-md-4">
+  <input id="dtNascimentoAluno" name="dtNascimentoAluno" type="text" placeholder="--/--/----" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="loginAluno">Loguin:</label>  
+  <div class="col-md-5">
+  <input id="loginAluno" name="loginAluno" type="text" placeholder="" class="form-control input-md">  
+  </div>
+</div>
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="senhaAluno">Senha:</label>
+  <div class="col-md-5">
+    <input id="senhaAluno" name="senhaAluno" type="password" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="confirmaSenhaAluno">Confirmar Senha:</label>
+  <div class="col-md-5">
+    <input id="confirmaSenhaAluno" name="confirmaSenhaAluno" type="password" placeholder="" class="form-control input-md">   
+  </div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-success" onclick="cadastraAluno();">CADASTRAR</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+<!-- ///////////////////////////////////////////////// FINAL ALUNO ////////////////////////////////////////////////////////// -->
+
+
+
+<!-- ///////////////////////////////////////////////// INICIO PROFESSOR ///////////////////////////////////////////////////// -->
+<div id="professor" class="container">
+<form class="form-horizontal">
+<fieldset>
+<!-- Form Name -->
+<legend></legend>
+<br/>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nomeProfessor">Nome:</label>  
+  <div class="col-md-5">
+  <input id="nomeProfessor" name="nomeProfessor" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="sebrenomeProfessor">Sobrenome:</label>  
+  <div class="col-md-5">
+  <input id="sebrenomeProfessor" name="sebrenomeProfessor" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="dtNascimentoProfessor">Data de Nascimento:</label>  
+  <div class="col-md-4">
+  <input id="dtNascimentoProfessor" name="dtNascimentoProfessor" type="text" placeholder="--/--/----" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpfProfessor">CPF:</label>  
+  <div class="col-md-5">
+  <input id="cpfProfessor" name="cpfProfessor" type="text" placeholder="" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="materiaUm">Matéria 1:</label>  
+  <div class="col-md-4">
+  <input id="materiaUm" name="materiaUm" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="materiaDois">Matéria 2:</label>  
+  <div class="col-md-4">
+  <input id="materiaDois" name="materiaDois" type="text" placeholder="" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="materiaTres">Matéria 3:</label>  
+  <div class="col-md-4">
+  <input id="materiaTres" name="materiaTres" type="text" placeholder="" class="form-control input-md">
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="materiaQuatro">Matéria 4:</label>  
+  <div class="col-md-4">
+  <input id="materiaQuatro" name="materiaQuatro" type="text" placeholder="" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="loginProfessor">Login:</label>  
+  <div class="col-md-5">
+  <input id="loginProfessor" name="loginProfessor" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="senhaProfessor">Senha:</label>
+  <div class="col-md-5">
+    <input id="senhaProfessor" name="senhaProfessor" type="password" placeholder="" class="form-control input-md">  
+  </div>
+</div>
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="confirmaSenhaProfessor">Confirmar Senha:</label>
+  <div class="col-md-5">
+    <input id="confirmaSenhaProfessor" name="confirmaSenhaProfessor" type="password" placeholder="" class="form-control input-md">
+  </div>
+</div>
+<!-- //////CANVAS////// -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="canvas1">Rubrica:</label>  
+  <div class="col-md-5">
+    <div class="container">
+    <canvas id="canvas1" style="border: 1px solid black; margin: none; padding: none;">
+        Caso esteja lendo isso, seu navegador não é compatível com HTML5.
+    </canvas>  
+    <br/>
+    <hr/>
+    <!--
+    Gerado<br/>
+    xinicio:<span id="coordx"></span> xfim:<span id="coordx2"></span><br/>
+    yinicio:<span id="coordy"></span> xfim:<span id="coordy2"></span><br/>
+    <hr/>-->
+    Clique<br/>
+    x:<span id="ccoordx"></span> Y:<span id="ccoordy"></span><br/>
+ 
+
+    </div>
+  </div>
+</div>
+<!-- //////CANVAS////// -->
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-success" onclick="cadastrarProfessor();">CADASTRAR</button>
+  </div>
+</div>
+
+</fieldset>
+</form>	
+</div>
+<!-- ///////////////////////////////////////////////// FINAL PROFESSOR ///////////////////////////////////////////////////// -->
+
+
+
+<!-- ///////////////////////////////////////////////// INICIO FUNCIONARIO ////////////////////////////////////////////////// -->
+<div id="funcionario" class="container">
+<form class="form-horizontal">
+<fieldset>
+<!-- Form Name -->
+<legend></legend>
+<br/>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nomeFuncionario">Nome:</label>  
+  <div class="col-md-5">
+  <input id="nomeFuncionario" name="nomeFuncionario" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="sobrenomeFuncionario">Sobrenome:</label>  
+  <div class="col-md-5">
+  <input id="sobrenomeFuncionario" name="sobrenomeFuncionario" type="text" placeholder="" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="dtNascimentoFuncionario">Data de Nascimento:</label>  
+  <div class="col-md-4">
+  <input id="dtNascimentoFuncionario" name="dtNascimentoFuncionario" type="text" placeholder="--/--/----" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cpfFuncionario">CPF:</label>  
+  <div class="col-md-5">
+  <input id="cpfFuncionario" name="cpfFuncionario" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="funcao">Função:</label>
+  <div class="col-md-5">
+    <select id="funcao" name="funcao" class="form-control">
+      <option value="Faxineiro">Faxineiro(a)</option>
+      <option value="Inspetor">Inspetor(a)</option>
+      <option value="Cantineiro">Cantineiro(a)</option>
+      <option value="Bibliotecário">Bibliotecário(a)</option>
+      <option value="Cozinheiro">Cozinheiro(a)</option>
+      <option value="Coordenador">Coordenador(a)</option>
+    </select>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="loginFuncionario">Login:</label>  
+  <div class="col-md-5">
+  <input id="loginFuncionario" name="loginFuncionario" type="text" placeholder="" class="form-control input-md">   
+  </div>
+</div>
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="senhaFuncionario">Senha:</label>
+  <div class="col-md-5">
+    <input id="senhaFuncionario" name="senhaFuncionario" type="password" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="confirmaSenhaFuncionario">Confirmar Senha:</label>
+  <div class="col-md-5">
+    <input id="confirmaSenhaFuncionario" name="confirmaSenhaFuncionario" type="password" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-success" onclick="cadastraFuncionario();">CADASTRAR</button>
+  </div>
+</div>
+</fieldset>
+</form>
+</div>
+<!-- ///////////////////////////////////////////////// FINAL FUNCIONARIO ////////////////////////////////////////////////// -->
+
+
+<!-- ///////////////////////////////////////////////// INCIO TURMA //////////////////////////////////////////////////////// -->
+<div id="turma" class="container">
+	<form class="form-horizontal">
+<fieldset>
+<!-- Form Name -->
+<legend></legend>
+<br/>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nomeTurma">Nome da Turma:</label>  
+  <div class="col-md-5">
+  <input id="nomeTurma" name="nomeTurma" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selecionaProfessor">Professor:</label>  
+  <div class="col-md-5">
+  <!--<input id="turmaAluno" name="turmaAluno" type="text" placeholder="" class="form-control input-md">-->
+  <select id="selecionaProfessor" name="selecionaProfessor" class="form-control">
+
+  </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="horarioInicio">Horário de Início:</label>  
+  <div class="col-md-2">
+  <input id="horarioInicio" name="horarioInicio" type="text" placeholder="06:00" class="form-control input-md">   
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="horarioFim">Horário do Fim:</label>  
+  <div class="col-md-2">
+  <input id="horarioFim" name="horarioFim" type="text" placeholder="08:30" class="form-control input-md">
+  </div>
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="segunda">Segunda-feira:</label>
+  <div class="col-md-4">
+    <select id="segunda" name="segunda" class="form-control">
+      <option value="sim">Sim</option>
+      <option value="nao">Nao</option>
+    </select>
+  </div>
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="terca">Terça-feira:</label>
+  <div class="col-md-4">
+    <select id="terca" name="terca" class="form-control">
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+  </div>
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="quarta">Quarta-feira:</label>
+  <div class="col-md-4">
+    <select id="quarta" name="quarta" class="form-control">
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+  </div>
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="quinta">Quinta-feira:</label>
+  <div class="col-md-4">
+    <select id="quinta" name="quinta" class="form-control">
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+  </div>
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="sexta">Sexta-feira:</label>
+  <div class="col-md-4">
+    <select id="sexta" name="sexta" class="form-control">
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+  </div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-success" onclick="cadastraTurma();">CADASTRAR</button>
+  </div>
+</div>
+</fieldset>
+</form>
+</div>
+<!-- ///////////////////////////////////////////////// FINAL TURMA ///////////////////////////////////////////////////////// -->
+
+<!-- /////////////////////////////////////////////// INICIO CONSULTA /////////////////////////////////////////////////////// -->
+<div id="consulta" class="container">
+  <div style="margin: 15px;">
+  <a href="#" class="btn btn-lg btn-default" onclick="consultaAlunos();" style="border:1px solid black;"><span class="material-icons">assignment_turned_in</span>ALUNOS</a>
+  <a href="#" class="btn btn-lg btn-default" onclick="consultaProfessores();" style="border:1px solid black;"><span class="material-icons">assignment_turned_in</span>PROFESSORES</a>
+  <a href="#" class="btn btn-lg btn-default" onclick="consultaTurmas();" style="border:1px solid black;"><span class="material-icons">assignment_turned_in</span>TURMAS</a>
+  <a href="#" class="btn btn-lg btn-default" onclick="consultaFuncionarios();" style="border:1px solid black;"><span class="material-icons">assignment_turned_in</span>FUNCIONARIOS</a>
+  </div>
+  
+  <div id="consultaAluno" class="jumbotron col-md-6" style="margin:0 auto;"></div>
+  
+<!--
+  <div id="consultaCanvas" class="container">
+    <canvas id="canvas2" style="border: 1px solid black; width: 400px; height: 400px;">
+      Caso esteja lendo isso, seu navegador não é compatível com HTML5.
+    </canvas>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for=""></label>
+        <div class="col-md-4">
+          <input id="nomeProfessorCanvas" name="nomeProfessorCanvas" type="text" placeholder="NOME DO PROFESSOR" class="form-control input-md">
+        </div>
+    </div>
+        <button id="" name="" class="btn btn-success" onclick="consultaCanvas();">CONSULTAR</button>
+    <br/>
+  </div>
+-->
+
+  <div id="consultaProfessor" class="jumbotron col-md-6" style="margin:0 auto;"></div>
+  <div id="consultaTurma" class="jumbotron col-md-6" style="margin:0 auto;"></div>
+  <div id="consultaFuncionario" class="jumbotron col-md-6" style="margin:0 auto;"></div>
+</div>
+<!-- /////////////////////////////////////////////// FINAL CONSULTA //////////////////////////////////////////////////////// -->
+
+
+
+</body>
+<script type="text/javascript">
+document.getElementById("aluno").style.display = "none";
+document.getElementById("professor").style.display = "none";
+document.getElementById("funcionario").style.display = "none";
+document.getElementById("turma").style.display = "none";
+document.getElementById("consulta").style.display = "none";
+
+////////////////////////////////////// INICIO ALUNO/////////////////////////////////////////
+function aluno(){
+	document.getElementById("aluno").style.display = "block";
+	document.getElementById("professor").style.display = "none";
+	document.getElementById("funcionario").style.display = "none";
+	document.getElementById("turma").style.display = "none";
+  document.getElementById("consulta").style.display = "none";
+  let turmas = JSON.parse(sessionStorage.turmas);
+  let turmaTxt = "";
+  let turmasOptions = document.getElementById("selecionaTurma").value;
+    for(let i = 0; i < turmas.length; i++){ 
+    turmaTxt += "<option value =" + turmas[i].nome +">" +turmas[i].nome +"</option>";  
+  }
+    turmas.push(turmaTxt);
+    select = document.getElementById("selecionaTurma");
+    select.innerHTML = turmas.join('\n');    
+}
+
+
+class Aluno{
+  constructor(turma,nome,sobrenome,nomePai,nomeMae,dtNascimento,login,senha,notaUm,notaDois,notaTres,notaQuatro){
+    this.turma = turma;
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+    this.nomePai = nomePai;
+    this.nomeMae = nomeMae;
+    this.dtNascimento = dtNascimento;
+    this.login = login;
+    this.senha = senha;
+    this.notaUm = notaUm;
+    this.notaDois = notaDois;
+    this.notaTres = notaTres;
+    this.notaQuatro = notaQuatro;
+  }
+}
+function cadastraAluno(){
+    let turmaAluno = document.getElementById("selecionaTurma").value;
+    let nomeAluno = document.getElementById("nomeAluno").value;
+    let sobreNomeAluno = document.getElementById("sobrenomeAluno").value;
+    let nomePai = document.getElementById("nomePai").value;
+    let nomeMae = document.getElementById("nomeMae").value;
+    let dtNascimento = document.getElementById("dtNascimentoAluno").value;
+    let loginAluno = document.getElementById("loginAluno").value;
+    let senhaAluno = document.getElementById("senhaAluno").value;
+
+    let alunos = JSON.parse(sessionStorage.alunos);
+    let turmass = JSON.parse(sessionStorage.turmas);
+
+    for(let i = 0; i <turmass.length; i++){
+      if(turmass[i].nome === turmaAluno){
+        alunos.push(new Aluno(turmaAluno,nomeAluno,sobreNomeAluno,nomePai,nomeMae,dtNascimento,loginAluno,senhaAluno,0,0,0,0));   
+        sessionStorage.alunos = JSON.stringify(alunos);
+        window.alert("Cadastro realizado com sucesso!");
+      }else{window.alert("Insira uma Turma cadastrada!");}
+    }
+    console.log(alunos);    
+}
+/////////////////////////////////FIM ALUNO/////////////////////////////////////////////////  
+
+////////////////////////////////INCIO PROFESSOR////////////////////////////////////////////
+  let traco = [];
+  let assinatura = [];
+function professor(){
+	document.getElementById("aluno").style.display = "none";
+	document.getElementById("professor").style.display = "block";
+	document.getElementById("funcionario").style.display = "none";
+	document.getElementById("turma").style.display = "none";
+  document.getElementById("consulta").style.display = "none";
+   
+  let altura = 400;
+  let largura = 400;
+  let desenhando = false;
+  var quadro = document.getElementById('canvas1');
+  quadro.setAttribute("width",largura);
+  quadro.setAttribute("height",altura);
+  var contexto = quadro.getContext("2d");
+  contexto.strokeStyle = "red";
+
+
+  quadro.onmousedown = function(evt){
+    document.getElementById("ccoordx").innerHTML = evt.clientX;
+    document.getElementById("ccoordy").innerHTML = evt.clientY;
+    let cliqueX = evt.clientX - 88;
+    let cliqueY = evt.clientY - 27;
+    console.log = "x: " + evt.clientX + " - y: " + evt.clientY;
+    desenhando=true;
+    contexto.moveTo(cliqueX,cliqueY);         
+    traco.push(cliqueX,cliqueY);
+  }
+  quadro.onmouseup = function(){
+    contexto.beginPath();
+    desenhando=false;
+    assinatura.push(traco); 
+    traco = [];         
+  }
+  quadro.onmousemove = function(evt){
+    if(desenhando == true){
+      let cliqueX = evt.clientX - 88;
+      let cliqueY = evt.clientY - 27;
+      contexto.lineTo(cliqueX,cliqueY);
+      contexto.stroke();
+      let array = [cliqueX, cliqueY];
+      traco.push(array);
+    }   
+  }
+}
+
+
+class Professor{
+  constructor(nome,sobrenome,dtNascimento,cpf,rubrica,materiaUm,materiaDois,materiaTres,materiaQuatro,login,senha){
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+    this.dtNascimento = dtNascimento;
+    this.cpf = cpf;
+    this.rubrica = rubrica;
+    this.materiaUm = materiaUm;
+    this.materiaDois = materiaDois;
+    this.materiaTres = materiaTres;
+    this.materiaQuatro = materiaQuatro;
+    this.login = login;
+    this.senha = senha;
+  }
+}
+
+function cadastrarProfessor(){
+    let nomeProfessor = document.getElementById("nomeProfessor").value;
+    let sobrenomeProfessor = document.getElementById("sebrenomeProfessor").value;
+    let dtNascimentoProfessor = document.getElementById("dtNascimentoProfessor").value;
+    let cpfProfessor = document.getElementById("cpfProfessor").value;
+    let rubrica = assinatura;
+    let materiaUm = document.getElementById("materiaUm").value;
+    let materiaDois = document.getElementById("materiaDois").value;
+    let materiaTres = document.getElementById("materiaTres").value;
+    let materiaQuatro = document.getElementById("materiaQuatro").value;
+    let loginProfessor = document.getElementById("loginProfessor").value;
+    let senhaProfessor = document.getElementById("senhaProfessor").value;
+    
+    let professores = JSON.parse(sessionStorage.professores);
+    professores.push(new Professor(nomeProfessor,sobrenomeProfessor,dtNascimentoProfessor,cpfProfessor,rubrica,materiaUm,materiaDois,materiaTres,materiaQuatro,loginProfessor,senhaProfessor));
+    sessionStorage.professores = JSON.stringify(professores);
+    window.alert("Cadastro concluido!");
+}
+
+////////////////////////////////FINAL PROFESSOR////////////////////////////////////////////
+
+
+///////////////////////////////INICIO FUNCIONARIO/////////////////////////////////////////
+function funcionario(){
+	document.getElementById("aluno").style.display = "none";
+	document.getElementById("professor").style.display = "none";
+	document.getElementById("funcionario").style.display = "block";
+	document.getElementById("turma").style.display = "none";
+  document.getElementById("consulta").style.display = "none";
+}
+
+class Funcionario{
+  constructor(nome,sobrenome,dtNascimento,cpf,funcao,login,senha){
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+    this.dtNascimento = dtNascimento;
+    this.cpf = cpf;
+    this.funcao = funcao;
+    this.login = login;
+    this.senha = senha;
+  }
+}
+function cadastraFuncionario(){
+    let nomeFuncionario = document.getElementById("nomeFuncionario").value;
+    let sobrenomeFuncionario = document.getElementById("sobrenomeFuncionario").value;
+    let dtNascimentoFuncionario = document.getElementById("dtNascimentoFuncionario").value;
+    let cpfFuncionario = document.getElementById("cpfFuncionario").value;
+    let funcao = document.getElementById("funcao").value;
+    let loginFuncionario = document.getElementById("loginFuncionario").value;
+    let senhaFuncionario = document.getElementById("senhaFuncionario").value;
+
+    let funcionarios = JSON.parse(sessionStorage.funcionarios);
+
+    funcionarios.push(new Funcionario(nomeFuncionario,sobrenomeFuncionario,dtNascimentoFuncionario,cpfFuncionario,funcao,loginFuncionario,senhaFuncionario));
+    console.log(funcionarios);
+    window.alert("Cadastro realizado com sucesso!");
+    sessionStorage.funcionarios = JSON.stringify(funcionarios);
+}
+///////////////////////////////FINAL FUNCIONARIO/////////////////////////////////////////
+
+
+///////////////////////////////INICIA TURMA///////////////////////////////////////////////
+function turma(){
+	document.getElementById("aluno").style.display = "none";
+	document.getElementById("professor").style.display = "none";
+	document.getElementById("funcionario").style.display = "none";
+	document.getElementById("turma").style.display = "block";
+  document.getElementById("consulta").style.display = "none";
+  let professores = JSON.parse(sessionStorage.professores);
+  let professorTxt = "";
+  let professorOptions = document.getElementById("selecionaProfessor").value;
+  for(let i = 0; i < professores.length; i++){ 
+    professorTxt += "<option value =" + professores[i].nome +">" +professores[i].nome +"</option>";  
+  }
+  professores.push(professorTxt);
+  select = document.getElementById("selecionaProfessor");
+  select.innerHTML = professores.join('\n');
+
+}	
+
+class Turma{
+  constructor(nome,hrInicio,hrFim,diaSemana,profResponsavel){
+  this.nome = nome;
+  this.hrInicio = hrInicio;
+  this.hrFim = hrFim;
+  this.diaSemana = diaSemana;
+  this.profResponsavel = profResponsavel;
+  }
+}
+function cadastraTurma(){
+  let nomeTurma = document.getElementById("nomeTurma").value;
+  let hrIncio = document.getElementById("horarioInicio").value;
+  let hrFim = document.getElementById("horarioFim").value;
+  let profResponsavel =document.getElementById("selecionaProfessor").value;
+////////////////////////////////////// DIA SEMANA ////////////////////////////////////////////////////////
+  var segunda = document.getElementById("segunda").value; let confirmaSeg ="";
+  var terca = document.getElementById("terca").value; let confirmaTer ="";
+  var quarta = document.getElementById("quarta").value; let confirmaQua ="";
+  var quinta = document.getElementById("quinta").value; let confirmaQui ="";
+  var sexta = document.getElementById("sexta").value; let confirmaSex ="";
+
+  if(segunda === "sim"){
+      confirmaSeg = "Segunda-feira";
+  } else{
+      confirmaSeg = "";
+  }
+  if(terca === "sim"){
+      confirmaTer = "Terça-feira";
+  } else{
+      confirmaTer = "";
+  }
+  if(quarta === "sim"){
+      confirmaQua = "Quarta-Feira";
+  } else{
+      confirmaQua = "";
+  }
+  if(quinta === "sim"){
+      confirmaQui = "Quinta-feira";
+  } else{
+      confirmaQui = "";
+  }
+  if(sexta === "sim"){
+      confirmaSex = "Sexta-feira";
+  } else{
+      confirmaSex = "";
+  }
+  let diaSemana =[confirmaSeg,confirmaTer,confirmaQua,confirmaQui,confirmaSex];
+///////////////////////////////////// DIA SEMANA /////////////////////////////////////////////////////////
+ 
+  let turmas = JSON.parse(sessionStorage.turmas);
+  let professoress = JSON.parse(sessionStorage.professores);
+
+  for(let i = 0; i < professoress.length; i++){
+    if(professoress[i].nome === profResponsavel){
+      turmas.push(new Turma(nomeTurma,hrIncio,hrFim,diaSemana,profResponsavel));
+      sessionStorage.turmas = JSON.stringify(turmas);
+      window.alert("Cadastro realizado com sucesso!");
+    }else{window.alert("Insira um Professor cadastrado!");}
+  }
+  console.log(turmas);
+}
+///////////////////////////////FINAL TURMA///////////////////////////////////////////////
+
+///////////////////////////////INICIO CONSUKTA///////////////////////////////////////////////
+function consulta(){
+document.getElementById("aluno").style.display = "none";
+document.getElementById("professor").style.display = "none";
+document.getElementById("funcionario").style.display = "none";
+document.getElementById("turma").style.display = "none";
+document.getElementById("consulta").style.display = "block";
+
+
+document.getElementById("consultaAluno").style.display = "none";
+document.getElementById("consultaProfessor").style.display = "none";
+document.getElementById("consultaTurma").style.display = "none";
+document.getElementById("consultaFuncionario").style.display = "none";
+//document.getElementById("consultaCanvas").style.display = "none";
+}
+
+function consultaAlunos(){
+  document.getElementById("consultaAluno").style.display = "block";
+  document.getElementById("consultaProfessor").style.display = "none";
+  document.getElementById("consultaTurma").style.display = "none";
+  document.getElementById("consultaFuncionario").style.display = "none";
+  //document.getElementById("consultaCanvas").style.display = "none";
+  let cAlunos = JSON.parse(sessionStorage.alunos);
+  let consulta = document.getElementById("consultaAluno");
+
+  for(var i=0; i < cAlunos.length; i++){
+    consulta.innerHTML += "Nome: " + cAlunos[i].nome + "<br/>";
+    consulta.innerHTML += "Sobrenome: " + cAlunos[i].sobrenome + "<br/>";
+    consulta.innerHTML += "Nome do Pai: " + cAlunos[i].nomePai + "<br/>";
+    consulta.innerHTML += "Nome da Mãe: " + cAlunos[i].nomeMae + "<br/>";
+    consulta.innerHTML += "Data de nascimento: " + cAlunos[i].dtNascimento + "<br/>";
+    consulta.innerHTML += "Turma: " + cAlunos[i].turma + "<br/>";
+    consulta.innerHTML += "Login: " + cAlunos[i].login + "<br/>";
+    consulta.innerHTML += "Senha: " + cAlunos[i].senha + "<br/>";
+    consulta.innerHTML += "Nota: " + cAlunos[i].notaUm + "<br/>";
+    consulta.innerHTML += "Nota: " + cAlunos[i].notaDois + "<br/>";
+    consulta.innerHTML += "Nota: " + cAlunos[i].notaTres + "<br/>";
+    consulta.innerHTML += "Nota: " + cAlunos[i].notaQuatro + "<br/><br/><hr/><br/><br/>";
+
+  }
+}
+
+function consultaProfessores(){
+  document.getElementById("consultaAluno").style.display = "none";
+  document.getElementById("consultaProfessor").style.display = "block";
+  document.getElementById("consultaTurma").style.display = "none";
+  document.getElementById("consultaFuncionario").style.display = "none";
+  //document.getElementById("consultaCanvas").style.display = "block";
+  let cProfessores = JSON.parse(sessionStorage.professores);
+  let consulta = document.getElementById("consultaProfessor");
+  for(var i=0; i < cProfessores.length; i++){
+    consulta.innerHTML += "Nome: " + cProfessores[i].nome + "<br/>";
+    consulta.innerHTML += "Sobrenome: " + cProfessores[i].sobrenome + "<br/>";
+    consulta.innerHTML += "Data de Nascimento: " + cProfessores[i].dtNascimento + "<br/>";
+    consulta.innerHTML += "CPF: " + cProfessores[i].cpf + "<br/>";
+    //consulta.innerHTML += "Rubrica: " + cProfessores[i].rubrica + "<br/>";
+    consulta.innerHTML += "Matéria: " + cProfessores[i].materiaUm + "<br/>";
+    consulta.innerHTML += "Matéria: " + cProfessores[i].materiaDois + "<br/>";
+    consulta.innerHTML += "Matéria: " + cProfessores[i].materiaTres + "<br/>";
+    consulta.innerHTML += "Matéria: " + cProfessores[i].materiaQuatro + "<br/>";
+    consulta.innerHTML += "Login: " + cProfessores[i].login + "<br/>";
+    consulta.innerHTML += "Senha: " + cProfessores[i].senha + "<br/><br/>" ;
+    //consulta.innerHTML += "<canvas id ='" + canvas1 + "' style='border:1px solid black; width:400px; height:400px;'></canvas>";
+    consulta.innerHTML += "<br/><hr/><br/><br/>";
+  }
+}
+
+/*
+function consultaCanvas(){
+  nomeProff = document.getElementById("nomeProfessorCanvas").value;
+  var quadro2 = document.getElementById('canvas2');
+  var contexto2 = quadro2.getContext("2d");
+  contexto2.strokeStyle = "black";
+  let xProfessores = JSON.parse(sessionStorage.professores);
+
+  for(let u = 0; u < xProfessores.length; u++){
+    if(xProfessores[u].nome === nomeProff){
+      let rubricaProfessor = xProfessores[u].rubrica;
+      window.alert("segundo for");
+      for(let i = 0; i < xProfessores.length; i++){
+        window.alert("beginPath");
+        contexto2.beginPath();
+        window.alert("moveTo");
+        contexto2.moveTo(rubricaProfessor[i][0][0],rubricaProfessor[i][0][1]);
+        window.alert("terceiro for");
+        for(let j = 1; j < xProfessores[i].length; j++){
+          window.alert("lineTo");
+          contexto2.lineTo(rubricaProfessor[i][j][0],rubricaProfessor[i][j][1]);
+          window.alert("Stroke");
+          contexto2.stroke();
+        }
+      }
+    }
+  }
+}
+*/
+
+
+
+
+function consultaTurmas(){
+  document.getElementById("consultaAluno").style.display = "none";
+  document.getElementById("consultaProfessor").style.display = "none";
+  document.getElementById("consultaTurma").style.display = "block";
+  document.getElementById("consultaFuncionario").style.display = "none";
+ // document.getElementById("consultaCanvas").style.display = "none";
+
+
+  let cTurmas = JSON.parse(sessionStorage.turmas);
+  let consulta = document.getElementById("consultaTurma");
+  for(var i=0; i < cTurmas.length; i++){
+    consulta.innerHTML += "Nome: " + cTurmas[i].nome + "<br/>";
+    consulta.innerHTML += "Horário de Inicio: " + cTurmas[i].hrInicio + "<br/>";
+    consulta.innerHTML += "Horário de Termino: " + cTurmas[i].hrFim + "<br/>";
+    consulta.innerHTML += "Dias da semana: " + cTurmas[i].diaSemana + "<br/>";
+    consulta.innerHTML += "Professor: " + cTurmas[i].profResponsavel + "<br/><br/><hr/><br/><br/>";
+
+  }
+}
+
+function consultaFuncionarios(){
+
+  document.getElementById("consultaAluno").style.display = "none";
+  document.getElementById("consultaProfessor").style.display = "none";
+  document.getElementById("consultaTurma").style.display = "none";
+  document.getElementById("consultaFuncionario").style.display = "block";
+ // document.getElementById("consultaCanvas").style.display = "none";
+
+  let cFuncionarios = JSON.parse(sessionStorage.funcionarios);
+  let consulta = document.getElementById("consultaFuncionario");
+  for(var i=0; i < cFuncionarios.length; i++){
+    consulta.innerHTML += "Nome: " + cFuncionarios[i].nome + "<br/>";
+    consulta.innerHTML += "Sobrenome: " + cFuncionarios[i].sobrenome + "<br/>";
+    consulta.innerHTML += "Data de Nascimento: " + cFuncionarios[i].dtNascimento + "<br/>";
+    consulta.innerHTML += "CPF: " + cFuncionarios[i].cpf + "<br/>";
+    consulta.innerHTML += "Função: " + cFuncionarios[i].funcao + "<br/>";
+    consulta.innerHTML += "Login: " + cFuncionarios[i].login + "<br/>";
+    consulta.innerHTML += "Senha: " + cFuncionarios[i].senha + "<br/><br/><hr/><br/><br/>";
+  }  
+}
+///////////////////////////////FINAL CONSUKTA///////////////////////////////////////////////
+</script>
+</html>

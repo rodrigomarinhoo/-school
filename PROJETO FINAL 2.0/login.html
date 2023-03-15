@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Centro Educacional Marinho de Mendonça</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+	<!--///////////////////     Loguin e Senha          ///////////////////// -->
+<form class="form-horizontal container" style="border:2px solid black; margin-top: 15px;">
+<fieldset>
+<!-- Form Name -->
+<legend>Login</legend>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="login">Loguin:</label>  
+  <div class="col-md-6">
+  <input id="login" name="login" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="senha">Senha:</label>
+  <div class="col-md-6">
+    <input id="senha" name="senha" type="password" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="opcao">Selecione:</label>
+  <div class="col-md-5">
+    <select id="opcao" name="opcao" class="form-control">
+      <option value="0">~~Escolha~~</option>	
+      <option value="1">Aluno(a)</option>
+      <option value="2">Professor(a)</option>
+      <option value="3">Funcionário(a)</option>
+    </select>
+  </div>
+</div>
+<a href="#" class="btn btn-block btn-success" onclick="confirmacao();">Entrar</a>
+</fieldset>
+</form>
+<!--///////////////////     Fim Loguin e Senha          ///////////////////// -->
+<br/>
+<br/>
+</body>
+<script type="text/javascript">
+	function confirmacao(){
+	let confirmaLogin = document.getElementById("login").value;
+	let confirmaSenha = document.getElementById("senha").value;
+	let opcao = document.getElementById("opcao").value;
+	switch(opcao){
+		case'0':
+		if(confirmaLogin === "master" && confirmaSenha === "root"){
+			document.location.assign("master.html")
+		}else{
+			window.alert("Login ou Senha Incorreta!")
+		}
+		break;
+		case'1':
+		//verifica cadastro de aluno
+		let alunos = JSON.parse(sessionStorage.alunos);
+		for(let i = 0; i < alunos.length; i++){
+			if(alunos[i].login === confirmaLogin && alunos[i].senha === confirmaSenha){
+				sessionStorage.logado = JSON.stringify(alunos[i]);
+				document.location.assign("./aluno.html");
+			}else{
+			window.alert("Login ou Senha Incorreta!");
+			}
+		}
+		break;
+		case'2':
+		//verifica cadastro de professor
+		let professores = JSON.parse(sessionStorage.professores);
+		for(let i = 0; i < professores.length; i++){
+			if(professores[i].login === confirmaLogin && professores[i].senha === confirmaSenha){
+				sessionStorage.logadoP = JSON.stringify(professores[i]);
+				document.location.assign("./professor.html");
+			}else{
+			window.alert("Login ou Senha Incorreta!");
+			}
+		}
+		break;
+		case'3':
+		//verifica cadastro de funcionario
+		let funcionarios = JSON.parse(sessionStorage.funcionarios);
+		for(let i = 0; i < funcionarios.length; i++){
+			if(funcionarios[i].login === confirmaLogin && funcionarios[i].senha === confirmaSenha){
+				document.location.assign("./funcionario.html");
+			}else{
+			window.alert("Login ou Senha Incorreta!");
+			}
+		}
+		break;
+		default:
+		window.alert("Selecione uma função!")
+		break;
+	}
+}	
+</script>
+</html>

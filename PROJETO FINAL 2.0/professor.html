@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Centro Educacional Marinho de Mendonça - Lançamento de Notas</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"/>
+</head>
+<body>
+	 <a href="login.html" class="btn btn-lg btn-danger" onclick=""><span class="material-icons">exit_to_app</span> SAIR</a>
+<form class="form-horizontal">
+<fieldset>
+<!-- Form Name -->
+<legend></legend>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="turma">Turmas:</label>
+  <div class="col-md-5">
+    <select id="selecionaTurma" name="turma" class="form-control">
+    </select>
+  </div>
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="aluno">Alunos:</label>
+  <div class="col-md-5">
+    <select id="selecionaAluno" name="aluno" class="form-control">
+    </select>
+  </div>
+</div>
+<!-- Text input-->
+<!--<div class="form-group">
+  <label class="col-md-4 control-label" for="nomeTurma">Turma:</label>  
+  <div class="col-md-5">
+  <input id="nomeTurma" name="nomeTurma" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div> -->
+<!-- Text input-->
+<!--<div class="form-group">
+  <label class="col-md-4 control-label" for="nomeAluno">Aluno:</label>  
+  <div class="col-md-5">
+  <input id="nomeAluno" name="nomeAluno" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div> -->
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="materiaUm">Nota da Primeira Materia:</label>  
+  <div class="col-md-5">
+  <input id="materiaUm" name="materiaUm" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="materiaDois">Nota da Segunda Materia:</label>  
+  <div class="col-md-5">
+  <input id="materiaDois" name="materiaDois" type="text" placeholder="" class="form-control input-md">    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="materiaTres">Nota da Terceira Materia:</label>  
+  <div class="col-md-5">
+  <input id="materiaTres" name="materiaTres" type="text" placeholder="" class="form-control input-md"> 
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="materiaQuatro">Nota da Quarta Materia:</label>  
+  <div class="col-md-5">
+  <input id="materiaQuatro" name="materiaQuatro" type="text" placeholder="" class="form-control input-md">
+  </div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-success" onclick="cadastraNotas();">CADASTRAR</button>
+  </div>
+</div>
+</fieldset>
+</form>
+</body>
+<script type="text/javascript">
+let alunos = JSON.parse(sessionStorage.alunos);
+let professores = JSON.parse(sessionStorage.logadoP);
+let turmas = JSON.parse(sessionStorage.turmas);
+console.log(professores);
+window.onload = function alunoEturma(){
+let turmaDoProfessor="";
+
+let alunoTxt="";
+let turmaTxt = "";
+let turmasOptions = document.getElementById("selecionaTurma").value;
+
+for(var i=0; i < turmas.length; i++){
+  if(professores.nome === turmas[i].profResponsavel){    
+    turmaTxt += "<option value =" + turmas[i].nome +">" +turmas[i].nome +"</option>";    
+    turmaDoProfessor = turmas[i].nome;
+    for(var j=0; j< alunos.length; j++){      
+      if(turmaDoProfessor === alunos[j].turma){        
+        alunoTxt +="<option value=" + alunos[j].nome + ">" + alunos[j].nome + "</option>";       
+      }
+    }
+  }
+}
+turmas.push(turmaTxt);
+select = document.getElementById("selecionaTurma");
+select.innerHTML = turmas.join('\n');
+
+alunos.push(alunoTxt);
+selectA = document.getElementById("selecionaAluno");
+selectA.innerHTML = alunos.join('\n');
+}
+
+function cadastraNotas(){
+let nomeAluno = document.getElementById("selecionaAluno").value;
+let nomeTurma = document.getElementById("selecionaTurma").value;
+let notaUmm = Number(document.getElementById("materiaUm").value);
+let notaDoiss = Number(document.getElementById("materiaDois").value);
+let notaTress = Number(document.getElementById("materiaTres").value);
+let notaQuatroo = Number(document.getElementById("materiaQuatro").value);
+
+	for(var i = 0; i < alunos.length; i++){
+	if(alunos[i].nome == nomeAluno && alunos[i].turma == nomeTurma){
+		alunos[i].notaUm = notaUmm;
+		alunos[i].notaDois = notaDoiss;
+		alunos[i].notaTres = notaTress;
+		alunos[i].notaQuatro = notaQuatroo;
+      	sessionStorage.alunos = JSON.stringify(alunos);
+      	window.alert("Lançamento de notas realizado com sucesso!");
+		}
+	}
+}
+</script>
+</html>

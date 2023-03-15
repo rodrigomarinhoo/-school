@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Centro Educacional Marinho de Mendonça - Consulta de Notas</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+	<a href="login.html" class="btn btn-lg btn-danger" onclick="" style="margin-left: 15px; margin-top: 15px;" ><span class="material-icons" >exit_to_app</span> SAIR</a>
+	<div id="exibeNotas" class="jumbotron col-md-6" style="margin:0 auto;">
+	</div>
+</body>
+<script type="text/javascript">	
+	let alunos = JSON.parse(sessionStorage.logado);
+	let turmas = JSON.parse(sessionStorage.turmas);
+	let professores = JSON.parse(sessionStorage.professores);
+
+window.onload = function consultaNotas(){
+	let consultas = document.getElementById('exibeNotas');
+	let professorResp = "";
+	for(let i = 0; i < turmas.length; i++){
+		if(alunos.turma === turmas[i].nome){
+			professorResp = turmas[i].profResponsavel;	//}
+			for(let i = 0; i < professores.length; i++){
+				if(professores[i].nome === professorResp){
+					consultas.innerHTML +="Professor: " + professorResp + "<br/>";
+					consultas.innerHTML +="Matéria " + professores[i].materiaUm     + " : nota - " + alunos.notaUm   + "<br/>";
+					consultas.innerHTML +="Matéria " + professores[i].materiaDois   + " : nota - " + alunos.notaDois + "<br/>";
+					consultas.innerHTML +="Matéria " + professores[i].materiaTres   + " : nota - " + alunos.notaTres + "<br/>";
+					consultas.innerHTML +="Matéria " + professores[i].materiaQuatro + " : nota - " + alunos.notaQuatro + "<br/>";
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+</script>
+</html>
